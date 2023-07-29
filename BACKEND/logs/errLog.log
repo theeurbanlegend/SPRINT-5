@@ -1,0 +1,78 @@
+20230726	23:56:46	3516cb06-e487-4bf8-8932-9ce664a56cd1	SyntaxError:Unexpected token " in JSON at position 6	GET	/auth/users	undefined
+20230727	00:08:43	c48d4625-2bbf-44b6-ae02-35f0ddf6f3e7	Error:data and hash arguments required	POST	/auth/users	undefined
+20230727	00:11:49	0fd74403-8f21-4654-99e4-f8e3dc30dd34	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:12:11	0c95e496-6039-4285-88d7-eb3369415211	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:18:18	a4715b3d-4ab7-4990-bf26-e707f0fd1ffc	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:19:48	b76ebcf5-954f-42c4-ab03-27a69b9b8e6b	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:19:51	0404a9f7-2938-4613-9592-f05490e3dc2b	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:20:08	65889cc2-8f0a-4f0c-b0bd-f0837e8a69c6	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:20:14	c9f7c5c6-cb89-47fb-8d79-0dec39625105	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:20:15	70adf372-1042-47d3-88b3-76e66a138b14	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:21:25	943dcff6-5068-43bb-baff-e51753a960a0	TypeError:Cannot read properties of undefined (reading 'username')	GET	/users	undefined
+20230727	00:22:18	48d94e6e-ae70-4fcc-91c1-7cebca655275	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:22:45	0aac5485-8cdc-4c5c-98b9-a777131a8d0d	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:22:46	d6d28d77-2986-4759-8297-d857343fe922	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:23:44	365e42e7-66a2-438a-920c-25a55dd05d52	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:23:46	79fa0cb7-d01d-4702-b017-4db28acc33c6	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:24:00	ad60c4cb-d246-4589-b930-52a15a046c1f	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:25:40	359a7145-42e4-4848-b6c4-47535067d0ba	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:30:17	c7251217-aadb-4008-87cc-e73621f04434	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	00:30:18	eb74d251-9112-466c-af31-1a3020063c24	TypeError:Cannot read properties of undefined (reading 'username')	GET	/work	undefined
+20230727	12:57:27	22a1647c-0a47-497d-a87e-f9abe8ddbaf0	TypeError:Cannot read properties of null (reading 'length')	POST	/auth/work	http://localhost:5173
+20230727	13:00:51	9d1bd1ac-f5d1-4c7f-8001-fba1f41f69c1	TypeError:Cannot read properties of null (reading 'length')	POST	/auth/work	http://localhost:5173
+20230727	13:01:38	cb000a93-513e-478d-9896-92380d623e89	TypeError:Cannot read properties of null (reading 'length')	POST	/auth/work	http://localhost:5173
+20230727	13:35:55	f31dc013-1f09-4bf9-b0b9-9542b5efd679	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:35:57	4379e268-ea4d-4d45-89c4-bae0f5538e49	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:35:58	324d0134-4508-48c2-8cee-a7b3dd30d657	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:35:59	b4a5979a-9e82-4e12-b91e-1b20c2e7b88f	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:00	d24b1e50-3b8e-43e0-bfb4-717975f89482	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:00	22d42e44-7140-43ee-94b1-082aefd48d04	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:00	5c2fd1c2-c3e3-4457-95d7-5440e0d02ab2	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:01	a3d578b1-886c-470c-b518-d33247e9ec99	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:02	6a9d816a-3c7f-473f-a721-7ccc071facd8	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:02	6872f72d-ae43-4e33-b121-d9bb31b2d6ab	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:03	665d24d1-32bc-4ef6-9963-4ecab196eff3	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:03	be379318-774f-48cf-9430-dbcc2e28e229	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:03	4fce0453-aa7c-4a59-b042-2c9c57b8a5c1	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:03	803f5200-15d2-4d13-a9de-5627a382b1d1	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:04	65014989-9862-4a61-bdd9-de93c56da98a	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:04	05fc0c30-c0b4-4606-b88e-7e58b32eba66	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:05	b0ba4a63-ca6a-49c1-a9c2-3ce726bb1952	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:05	ffc6f9af-142c-4eac-86da-6c9c1c275090	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:05	9c090625-b62e-4b50-bf40-1d5845e7e8d1	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:05	c1193a95-1e83-410d-a64c-56514690b8b6	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:05	ade6a870-35b9-4dc2-bcdb-081b12a37c9c	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:06	6374870e-9bed-48a7-b401-4ae7e4b45800	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	13:36:06	fc171f7a-06ec-4939-b3c3-8b859236f7ba	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/users	http://localhost:5173
+20230727	19:42:20	7cba619c-9422-49c2-9439-22d5ab261ad8	MongoServerSelectionError:getaddrinfo ENOTFOUND ac-gueufpz-shard-00-00.ldqit7k.mongodb.net	POST	/auth/work	http://localhost:5173
+20230727	19:43:09	4a756ef6-6827-40c4-b2a2-11d4730aaa95	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:04:50	eec4704e-de37-457e-9b67-cd21c325ee69	MongoServerSelectionError:getaddrinfo ENOTFOUND ac-gueufpz-shard-00-00.ldqit7k.mongodb.net	POST	/auth/users	http://localhost:5173
+20230727	21:04:50	f40cd8af-7c96-476c-b19d-4ed65009c960	MongoServerSelectionError:getaddrinfo ENOTFOUND ac-gueufpz-shard-00-00.ldqit7k.mongodb.net	POST	/auth/users	http://localhost:5173
+20230727	21:18:27	d716ae49-52eb-4f3d-81f1-11533d0c680f	MongoServerSelectionError:getaddrinfo ENOTFOUND ac-gueufpz-shard-00-01.ldqit7k.mongodb.net	POST	/auth/users	http://localhost:5173
+20230727	21:18:28	0676a33d-772c-4fe8-8562-76b51e20578e	MongoServerSelectionError:getaddrinfo ENOTFOUND ac-gueufpz-shard-00-01.ldqit7k.mongodb.net	POST	/auth/users	http://localhost:5173
+20230727	21:19:31	da6e58c3-bea8-4b2c-8a61-731dadf43cfb	MongooseError:Operation `employees.findOne()` buffering timed out after 10000ms	POST	/auth/work	http://localhost:5173
+20230727	21:19:38	3b3da3ac-8780-4966-8163-2c3891b77700	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:20:31	65f70c19-12a7-4387-8974-b4f2b6873933	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:20:31	d5c02576-3ebb-4161-9026-15ea33e34bec	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:22:04	286b1f6c-082d-46eb-a0df-30955d45fda7	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:28:39	f91cc4e0-481f-464a-a0e8-4ed1feacd4aa	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:37:26	e6c5fe77-5211-4506-b0db-bcc0b8973283	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:54:40	8e3f7aa4-8e1c-4296-adc3-3f882c03ecf2	MongooseError:Operation `buyers.find()` buffering timed out after 10000ms	POST	/signup	http://localhost:5173
+20230727	21:54:50	3f12727a-5c58-43a6-93dd-9a239e3dac42	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:55:19	7060293e-797b-4371-8b16-dc2ba8ae33b5	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:56:53	6cc980bc-38ed-41eb-80ff-185e47ccc653	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	21:57:15	ad02c93f-4a4b-4911-98e2-1b62de5b350e	MongooseError:Operation `buyers.find()` buffering timed out after 10000ms	POST	/signup	http://localhost:5173
+20230727	22:00:01	8b31038f-283a-4c34-844a-0a5d4249f07a	MongooseError:Operation `employees.find()` buffering timed out after 10000ms	GET	/work	http://localhost:5173
+20230727	22:36:57	91146b1c-41b2-44fa-8b6b-48d28e4b064b	MongooseError:Operation `buyers.find()` buffering timed out after 10000ms	POST	/signup	http://localhost:5173
+20230727	22:37:07	6acaf86e-3a28-4e39-8104-bc2fd08c39cd	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230727	22:37:17	8eb3f603-c1db-4aeb-ae2b-2cae4cd71ec4	MongooseError:Operation `items.find()` buffering timed out after 10000ms	GET	/items	http://localhost:5173
+20230728	03:29:45	af13c703-bd0b-43a7-8dce-85cf0c8f865f	VersionError:No matching document found for id "64c166de0dc74cde9dc25d49" version 22 modifiedPaths "cartItems"	DELETE	/buy	http://localhost:5173
+20230728	11:21:06	62aff78c-e8e2-4cfb-88ab-c015cc3f7319	VersionError:No matching document found for id "64c166de0dc74cde9dc25d49" version 29 modifiedPaths "cartItems"	POST	/buy	http://localhost:5173
+20230728	13:47:28	6faa16b0-eb88-4ba2-b465-8c899184448b	ValidationError:Employee validation failed: roles.0: Cast to [string] failed for value "[ [ 'Admin,Employee' ] ]" (type string) at path "roles.0" because of "CastError"	PATCH	/work/64c16ca17b4f65fe329efc23	http://localhost:5173
+20230728	13:48:44	fdc660da-0d8f-453e-aa4e-5ac141f2b0be	ValidationError:Employee validation failed: roles.0: Cast to [string] failed for value "[ [ 'Admin,Employee' ] ]" (type string) at path "roles.0" because of "CastError"	PATCH	/work/64c16ca17b4f65fe329efc23	http://localhost:5173
+20230728	13:57:49	810da6e2-5515-43d0-ae6b-5e29651787e5	ValidationError:Employee validation failed: roles.0: Cast to [string] failed for value "[ [ 'Admin,Employee', 'Admin', 'Employee' ] ]" (type string) at path "roles.0" because of "CastError"	PATCH	/work/64c16ca17b4f65fe329efc23	http://localhost:5173
+20230728	13:58:08	8ca83d69-b48d-4c1b-a798-fe8c134539f1	ValidationError:Employee validation failed: roles.0: Cast to [string] failed for value "[ [ 'Manager', 'Employee' ] ]" (type string) at path "roles.0" because of "CastError"	PATCH	/work/64c16d077b4f65fe329efc27	http://localhost:5173
+20230728	22:27:42	01e6622e-0867-47d7-8f67-614792408bd9	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230728	22:27:44	e4dfdc36-c776-4ea8-9ce6-fef283279358	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
+20230728	22:27:47	8d59d177-8d64-40ae-9182-3b258d8ad85a	MongooseError:Operation `employees.findOne()` buffering timed out after 10000ms	POST	/auth/work	http://localhost:5173
+20230729	15:11:56	d56b573f-f604-403a-a261-0053f7704491	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/work	http://localhost:5173
