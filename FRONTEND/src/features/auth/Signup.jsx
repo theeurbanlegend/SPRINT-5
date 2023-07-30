@@ -6,6 +6,7 @@ import { useLoginUserMutation } from './authApiSlice'
 import { setCredentials } from './authSlice'
 import { useDispatch } from 'react-redux'
 import usePersist from '../../hooks/usePersist'
+import Spinner from '../spinner/Spinner'
 
 const Signup = () => {
   const [username,setUsername]=React.useState('')
@@ -13,8 +14,9 @@ const Signup = () => {
   const [response,setResponse]=React.useState('')
   const [persist, setPersist] = usePersist(); // Step 2: Use the usePersist hook
   const [error,setError]=React.useState('')
-  const [addBuyer]=useAddBuyerMutation()
-  const [loginUser]=useLoginUserMutation()
+  const [addBuyer, { isLoading: isAddingBuyer, isSuccess: addBuyerSuccess }] = useAddBuyerMutation();
+  const [loginUser, { isLoading: isLoggingIn, isSuccess: loginUserSuccess }] = useLoginUserMutation();
+
   const navigate=useNavigate()
   const dispatch=useDispatch()
 
@@ -22,7 +24,8 @@ const Signup = () => {
     e.preventDefault()
     const buyer={
       username:username,
-      password:password
+      password:password,
+      roles:['User']
     }
     try {
       // Create a new user
@@ -37,7 +40,7 @@ const Signup = () => {
       // Update the Redux state with the new credentials
       dispatch(setCredentials({ accessToken })); // Dispatch the setCredentials action
       setResponse('User created and logged in successfully');
-      console.log(response)
+      console.log('User created and logged in successfully')
       setUsername('');
       setPassword('');
       navigate('/user');
@@ -45,7 +48,7 @@ const Signup = () => {
       setError(err.data?.msg || 'An error occurred');
   }
   }
-  return (
+  let content=(
     <div className='signup-div'>
         <form onSubmit={handleSubmit} className="signup-container">
           <p className="signup-title">Create Account</p>
@@ -83,6 +86,13 @@ const Signup = () => {
         </form>
     </div>
   )
+  if (isAddingBuyer||isLoggingIn){
+    content=( <>
+    <Spinner/>
+    <p>Signing You In...</p>
+            </>)
+  }
+  return content
 }
 
 export default Signup

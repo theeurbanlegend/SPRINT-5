@@ -76,3 +76,4 @@
 20230728	22:27:44	e4dfdc36-c776-4ea8-9ce6-fef283279358	MongooseError:Operation `buyers.findOne()` buffering timed out after 10000ms	POST	/auth/users	http://localhost:5173
 20230728	22:27:47	8d59d177-8d64-40ae-9182-3b258d8ad85a	MongooseError:Operation `employees.findOne()` buffering timed out after 10000ms	POST	/auth/work	http://localhost:5173
 20230729	15:11:56	d56b573f-f604-403a-a261-0053f7704491	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/work	http://localhost:5173
+20230729	17:53:20	061d1bc0-f84d-4646-928d-a03c2684e7db	Error:ENOENT: no such file or directory, stat 'C:\Users\DirectEd Student\SPRINT 5\views\404.html'	GET	/	undefined

@@ -30,7 +30,7 @@ const AddItem = () => {
       setInStock('');
       setPrice('');
       setDesc('');
-      navigate('/items');
+      navigate('/admin/items');
   } catch (err) {
       setError(err.data?.message || 'An error occurred');
   }

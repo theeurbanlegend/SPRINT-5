@@ -41,7 +41,7 @@ const UpdateItem = () => {
       await updateItem(item).unwrap();
       setResponse('Item added successfully');
       console.log(response)
-      navigate('/items');
+      navigate('/admin/items');
   } catch (err) {
       setError(err.data?.message || 'An error occurred');
   }
