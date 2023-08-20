@@ -39,7 +39,12 @@ const checkUser=asyncHandler(async(req,res)=>{
             {expiresIn: '1m'}
         )
         const refreshToken=jwt.sign(
-            {"username": verified.username},
+            {
+                "Info":{
+                    "username":verified.username,
+                    "roles":verified.roles
+                }
+            },
             process.env.REFRESH_TOKEN_SECRET,
             {expiresIn: "10m"}//set to 7 days
         )
@@ -92,7 +97,12 @@ const checkEmployee=asyncHandler(async(req,res)=>{
             {expiresIn: '10m'}
         )
         const refreshToken=jwt.sign(
-            {"username": verified.username},
+            {
+                "Info":{
+                    "username":verified.username,
+                    "roles":verified.roles
+                }
+            },
             process.env.REFRESH_TOKEN_SECRET,
             {expiresIn: "1d"}//set to 7 days
         )
@@ -106,7 +116,7 @@ const checkEmployee=asyncHandler(async(req,res)=>{
         })
 
         // Send accessToken containing username and roles 
-        res.json({ accessToken })
+        res.json({ accessToken,verified })
 
     }
 })
@@ -123,9 +133,9 @@ const refresh = (req, res) => {
         process.env.REFRESH_TOKEN_SECRET,
         asyncHandler(async (err, decoded) => {
             if (err) return res.status(403).json({ msg: 'Forbidden' })
-            console.log(decoded)
-            const verified=await Employee.findOne({username:decoded.username }).exec()
-            const user=await Buyer.findOne({username:decoded.username }).exec()
+            console.log(decoded.Info)
+            const verified=await Employee.findOne({username:decoded.Info.username }).exec()
+            const user=await Buyer.findOne({username:decoded.Info.username }).exec()
             if (!verified&&!user){
             return res.status(401).json({ msg: 'Unauthorized' })
             }else if(verified){

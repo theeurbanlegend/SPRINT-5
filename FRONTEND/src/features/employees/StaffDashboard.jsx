@@ -3,6 +3,7 @@ import '../css/staffdash.css'
 import { Link } from 'react-router-dom'
 import { useSendLogoutMutation } from '../auth/authApiSlice';
 import { useNavigate } from 'react-router-dom';
+import Receiver from '../Chat/Receiver';
 const StaffDashboard = ({username}) => {
   const [sendLogout]=useSendLogoutMutation()
   const navigate=useNavigate()
@@ -26,6 +27,9 @@ const StaffDashboard = ({username}) => {
     <h2>Dashboard Menu</h2>
     <ul>
       <Link to='/' className='li'>Home</Link>
+      <Link to='/staff/receive' className='li notification'>Notifications
+      <span class="badge">3</span></Link>
+      
       
       <Link onClick={()=>{handleLogout()}} className='li'>Logout</Link>
     </ul>
@@ -38,11 +42,12 @@ const StaffDashboard = ({username}) => {
       <div className="staff-profile-info">
         <h3>{username}</h3>
         <p>Email: john@example.com</p>
+        
       </div>
-      
+     
       
     </div>
-   
+    
   </div>
   </div>
   )

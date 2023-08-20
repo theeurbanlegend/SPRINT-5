@@ -1,3 +1,14 @@
+.login-page{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin:10px;
+}
+
 .login-div {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -6,7 +17,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
     box-sizing: border-box;
   }
 .toggle a{
@@ -14,13 +24,22 @@
   color:blue;
   cursor:pointer;
 }
-.login-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-  }
+
+
+.cus-img{
+  background-image: url('../img/cart.jpg');
+  background-size: cover;
+  height:50vh;
+  width:50vw;
+}
+.staff-img{
+  background-image: url('../img/staff.jpg');
+  background-size: cover;
+  height:50vh;
+  width:50vw;
+}
+
+
   
   .login-title {
     font-size: 24px;
@@ -56,3 +75,32 @@
   .login-err{
     color:red;
   }
+
+  
+  /* Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .cus-img,
+  .staff-img {
+    height: 50vh; 
+    width: 80vw; 
+    margin-bottom: 0px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .login-page {
+    justify-content: space-evenly; 
+  }
+
+  .cus-img,
+  .staff-img {
+    height: 40vh; 
+    width: 40vw; 
+  }
+}

@@ -1,38 +1,58 @@
 import React from 'react'
 import { useAddItemMutation } from './itemApiSlice'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
 
 const AddItem = () => {
   const [itemname,setItemname]=React.useState('')
   const [inStock,setInStock]=React.useState('')
   const [price,setPrice]=React.useState('')
   const [desc,setDesc]=React.useState('')
-  
+  const [imageFile, setImageFile] = React.useState(null);
   const [response,setResponse]=React.useState('')
   const [error,setError]=React.useState('')
   const [addItem]=useAddItemMutation()
   const navigate=useNavigate()
+  const MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024
+
+
+
+const handleImageChange = (e) => {
+  const file = e.target.files[0]
+  if (file && file.size > MAX_IMAGE_SIZE_BYTES) {
+    setError('Image size exceeds the limit.')
+    toast.error('Image size exceeds the limit.')
+
+    setImageFile(null)
+  } else {
+    setImageFile(file)
+    setError('')
+  }
+};
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    const item={
-      itemname:itemname,
-      inStock:inStock,
-      price:price,
-      desc:desc
+    const formData = new FormData();
+    formData.append('itemname', itemname);
+    formData.append('inStock', inStock);
+    formData.append('price', price);
+    formData.append('desc', desc);
+    if (imageFile) {
+      formData.append('image', imageFile);
     }
     try {
       // Create a new item
-      await addItem(item).unwrap();
-      setResponse('Item added successfully');
+      await addItem(formData).unwrap()
+      setResponse('Item added successfully')
       console.log(response)
-      setItemname('');
-      setInStock('');
-      setPrice('');
-      setDesc('');
-      navigate('/admin/items');
+      setItemname('')
+      setInStock('')
+      setPrice('')
+      setDesc('')
+      setImageFile(null)
+      navigate('/admin/items')
   } catch (err) {
-      setError(err.data?.message || 'An error occurred');
+      setError(err.data?.message || 'An error occurred')
   }
   }
   return (
@@ -48,6 +68,15 @@ const AddItem = () => {
         value={itemname}
         />
       </label>
+      <br/>
+      <label htmlFor="image">Image:</label>
+        <input
+          type="file"
+          id="image"
+          
+          accept="image/*"
+          onChange={handleImageChange}
+        />
       <br/>
       <label htmlFor='inStock'>InStock:
         <input 
@@ -80,6 +109,7 @@ const AddItem = () => {
       </label>
       <button className="additem-button">Add Item</button>
   </form>
+  <ToastContainer/>
   </div>
   )
 }

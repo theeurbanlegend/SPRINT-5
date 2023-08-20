@@ -23,7 +23,7 @@ export const itemApiSlice =apiSlice.injectEndpoints({
             invalidatesTags:['Items']
         }),
         deleteItem:builder.mutation({
-            query:({id})=>({
+            query:(id)=>({
                 url:`/items/${id}`,
                 method:'DELETE',
                 body:id

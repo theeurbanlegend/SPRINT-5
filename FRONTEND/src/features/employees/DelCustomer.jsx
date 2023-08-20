@@ -24,15 +24,32 @@ const BuyersList = () => {
   if(isLoading){
     content= <p>Loading...</p>
   }else if(isSuccess){
-    content=buyers.map((user)=>(
-          <div key={user._id}>
-            <img className='product_img' src="/img.jpg" alt="Product 1"/>
-            <h3>Customer: {user.username}</h3>
-            <></>
-            <FontAwesomeIcon onClick={()=>handleDelete(user._id)} icon={faTrashCan}/>
-          </div>
-        
-    ))
+    content=
+    <table className="item-table">
+    <thead>
+      <tr>
+        <th>Customer First name</th>
+        <th>Customer Last name</th>
+        <th>Tel No.</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {buyers.map((buyer) => (
+        <tr key={buyer._id}>
+          
+          <td>{buyer.firstName}</td>
+          <td>{buyer.lastName}</td>
+          <td>{buyer.phone}</td>
+          <td>{buyer.email}</td>
+          <td>
+          <FontAwesomeIcon className='del-icon' onClick={()=>handleDelete(buyer._id)} icon={faTrashCan}/>
+          </td>
+        </tr>
+      ))} 
+    </tbody>
+  </table>
   }else if(isError){
     content=(<p>{error}</p>)
   }

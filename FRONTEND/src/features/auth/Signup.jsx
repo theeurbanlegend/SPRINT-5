@@ -9,8 +9,12 @@ import usePersist from '../../hooks/usePersist'
 import Spinner from '../spinner/Spinner'
 
 const Signup = () => {
-  const [username,setUsername]=React.useState('')
+  const [firstName,setFirstName]=React.useState('')
+  const [lastName,setLastName]=React.useState('')
+  const [phone,setPhone]=React.useState('')
+  const [email,setEmail]=React.useState('')
   const [password,setPassword]=React.useState('')
+  
   const [response,setResponse]=React.useState('')
   const [persist, setPersist] = usePersist(); // Step 2: Use the usePersist hook
   const [error,setError]=React.useState('')
@@ -23,7 +27,11 @@ const Signup = () => {
   const handleSubmit=async(e)=>{
     e.preventDefault()
     const buyer={
-      username:username,
+      firstName:firstName,
+      lastName:lastName,
+      phone:phone,
+      email:email,
+      username:firstName,
       password:password,
       roles:['User']
     }
@@ -41,7 +49,10 @@ const Signup = () => {
       dispatch(setCredentials({ accessToken })); // Dispatch the setCredentials action
       setResponse('User created and logged in successfully');
       console.log('User created and logged in successfully')
-      setUsername('');
+      setFirstName('');
+      setLastName('');
+      setPhone('');
+      setEmail('');
       setPassword('');
       navigate('/user');
   } catch (err) {
@@ -53,13 +64,41 @@ const Signup = () => {
         <form onSubmit={handleSubmit} className="signup-container">
           <p className="signup-title">Create Account</p>
           <p>Shop with us today!</p>
-          <label htmlFor='username'>Username:
+          <label htmlFor='firstName'>FirstName:
             <input 
             type="text"
             className="signup-input"
-            id='username'
-            onChange={e=>setUsername(e.target.value)}
-            value={username}
+            id='firstName'
+            onChange={e=>setFirstName(e.target.value)}
+            value={firstName}
+            />
+          </label>
+          <label htmlFor='lastName'>LastName:
+            <input 
+            type="text"
+            className="signup-input"
+            id='lastName'
+            onChange={e=>setLastName(e.target.value)}
+            value={lastName}
+            />
+          </label>
+          <label htmlFor='Email'>Email:
+            <input 
+            type="email"
+            className="signup-input"
+            id='Email'
+            onChange={e=>setEmail(e.target.value)}
+            value={email}
+            />
+          </label>
+          <label htmlFor='phone'>Phone:
+            <input 
+            type="tel"
+            className="signup-input"
+            placeholder='07...'
+            id='phone'
+            onChange={e=>setPhone(e.target.value)}
+            value={phone}
             />
           </label>
           <br/>

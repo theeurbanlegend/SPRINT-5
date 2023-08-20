@@ -37,17 +37,19 @@ const UserDashboard = () => {
   if (isLoading){
     content=( <p>Loading...</p>)
   }else if(isSuccess){
-    console.log(items)
-    content=items.map((item)=>(
-          <div className="product" key={item._id}>
-            <h3>Product Name:{item.itemname}</h3>
-            <p>Desc: {item.desc}</p>
-            <p>In Stock:{item.inStock}</p>
-            <p>Ksh {item.price}</p>
-            <button onClick={()=>{handleClick(item._id)}}>Add to Cart</button>
-          </div>
-        
-    ))
+    content=(
+      <div className="item-grid">
+        {items.map((item) =>(
+          <div  key={item._id} className="product">
+              <img className="product_img" src='hi' alt="Product 1" />
+              <h3>{item.itemname}</h3>
+              <p>{item.desc}</p>
+              <p>In Stock: {item.inStock}</p>
+              <p>Price: {item.price} Ksh</p>
+              <button onClick={()=>{handleClick(item._id)}}>Add to Cart</button>
+          </div>))}  
+      </div>                    
+        )
   }else if(isError){
     content=(<p>{error}</p>)
   }
@@ -55,11 +57,12 @@ const UserDashboard = () => {
   return (
     <div className='body'>
             <header>
-              <div>
+               <div>
                 <h1 >MuvAs E-Shop</h1>
                 <p>Welcome: {username}</p>
-                <ul className="navigation">
-                  <li><Link to="#">Shop</Link></li>
+                </div>
+                <div className="navigation">
+                <ul >
                   <li><Link to="/user/cart">Cart</Link></li>
                   <li><Link onClick={()=>{handleLogout()}}>Logout</Link></li>
                 </ul>
@@ -67,8 +70,9 @@ const UserDashboard = () => {
             </header>
 
             <main className="container"> 
-            <p>Our Products</p>
-            {content}</main>
+              <p>Our Products</p>
+              <div>{content}</div>
+            </main>
 
         <footer>
           <div className="container">

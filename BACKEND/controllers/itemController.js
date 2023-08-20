@@ -1,7 +1,9 @@
 const asyncHandler=require('express-async-handler')
 const mongoose = require('mongoose')
 const Item=require('../models/itemSchema')
-
+const multer = require('multer');
+const storage = multer.memoryStorage();
+const upload = require('../config/multer-config')
 const getItems=asyncHandler(async(req,res)=>{
     const items=await Item.find().lean().exec()
     if(!items||items.length===0)return res.status(404).json({
@@ -11,13 +13,20 @@ const getItems=asyncHandler(async(req,res)=>{
 })
 const addItems=asyncHandler(async(req,res)=>{
     const {itemname,inStock,price,desc}=req.body
+    // Check if the uploaded image exists in the request
+  let image = null;
+  if (req.file) {
+    image = req.file.buffer; // Get the image buffer
+  }
+
+  console.log(req.file)
     if(!itemname||!inStock||!price){
         return res.status(400).json({
             status:"All Fields Are Required"
         })
     } 
 
-    const newItem={itemname, inStock,price,desc}
+    const newItem={itemname, inStock,price,desc,image}
     const savedItem=await Item.create(newItem)
     res.status(200).json({
         status:"Item added successfully to Db",
@@ -49,6 +58,7 @@ const updateItems=asyncHandler(async(req,res)=>{
 })
 const removeItems=asyncHandler(async(req,res)=>{
     const id=req.params.id
+    console.log(req.body)
     if(!id||!mongoose.isValidObjectId(id)){
         return res.status(400).json({
         status:'Proper Item ID Required!!'

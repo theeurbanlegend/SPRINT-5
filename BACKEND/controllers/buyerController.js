@@ -12,8 +12,8 @@ const getBuyers=asyncHandler(async(req,res)=>{
     res.status(200).json(buyers)
 })
 const addBuyers=asyncHandler(async(req,res)=>{
-    const {username,password,roles}=req.body
-    console.log(username,password,roles)
+    const {firstName,lastName,email,phone,username,password,roles}=req.body
+    
     if(!username||!password){
         return res.status(400).json({
             msg:"All Fields Are Required"
@@ -27,7 +27,7 @@ const addBuyers=asyncHandler(async(req,res)=>{
     }
     const hashedPass=await bcrypt.hash(password,10)
 
-    const newBuyer={username, password:hashedPass,roles}
+    const newBuyer={firstName,lastName,email,phone,username, password:hashedPass,roles}
     const savedBuyer=await Buyer.create(newBuyer)
     // Generate JWT for the newly added buyer
     const accessToken = jwt.sign(

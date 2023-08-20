@@ -9,6 +9,7 @@ const getEmployees=asyncHandler(async(req,res)=>{
     if(!workers||workers.length===0)return res.status(404).json({
         msg:"No Employees in database"
     })
+    // Function to decrypt the password
     res.status(200).json(workers)
 })
 const addEmployees=asyncHandler(async(req,res)=>{
@@ -47,7 +48,12 @@ const updateEmployees=asyncHandler(async(req,res)=>{
         msg:"Error! User not found"
     })}
     employee.username=username
-    employee.password=await bcrypt.hash(password,10)
+    
+    if(password==employee.password){
+        employee.password=password
+    }else{
+        employee.password=await bcrypt.hash(password,10)
+    }
     employee.roles=roles
     const updatedEmployee=await employee.save()
     res.status(200).json({

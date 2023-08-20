@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAddEmployeeMutation } from './employeeApiSlice'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
 
 const AddEmployee = () => {
   const [username,setUsername]=React.useState('')
@@ -21,13 +22,16 @@ const AddEmployee = () => {
     }
     try {
       // Create a new employee
-      await addEmployee(employee).unwrap();
+      const data=await addEmployee(employee).unwrap();
+      toast.success(data.msg)
       setResponse('Employee added successfully');
       setUsername('');
       setPassword('');
       navigate('/admin');
   } catch (err) {
       setError(err.data?.message || 'An error occurred');
+      console.log(err)
+      toast.error(err.data.msg)
   }
   }
   const handleRoleChange = (e) => {
@@ -90,6 +94,7 @@ const AddEmployee = () => {
       <button className="addemp-button">Register Employee</button>
   
   </form>
+  <ToastContainer/>
   </div>
   )
 }

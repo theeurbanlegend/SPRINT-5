@@ -2,7 +2,7 @@ const allowedOptions=require('./allowedOrigins')
 
 const corsOptions={
     origin:(origin,callback)=>{
-        if(allowedOptions.indexOf(origin)!==-1||!origin){
+        if(allowedOptions.indexOf(origin)!==-1||!origin||origin.endsWith('/socket.io/')){
             callback(null,true)
         }else{
             callback(new Error('Not allowed by CORS'))

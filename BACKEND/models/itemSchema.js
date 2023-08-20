@@ -16,7 +16,10 @@ const itemSchema=new mongoose.Schema({
     desc:{
         type:String,
         default:"An item sold in the duka bazaar"
-    }
+    },
+    image: {
+        type: Buffer
+      }
     
 },{timestamps:true})
 

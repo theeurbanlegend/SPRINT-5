@@ -62,6 +62,11 @@ body {
   color:blue;
   cursor:pointer;
 }
+.toggle {
+  text-decoration: underline;
+  color:blue;
+  cursor:pointer;
+}
 .additem-container {
     background-color: #ffffff;
     padding: 30px;
@@ -201,9 +206,24 @@ body {
     font-weight: bold;
     transition: background-color 0.2s;
   }
+  .del-icon:hover{
+    color:red;
+  }
   
   .update-button:hover {
     background-color: #0056b3;
+  }
+  .item-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  .addButton {
+    background-color: #48bb78;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
   }
 
 

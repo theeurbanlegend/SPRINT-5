@@ -6,8 +6,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(121, 150, 175)
-    ;
+    background-image:url('../img/shop.jpg');
+    backdrop-filter: blur(40px);
+    background-size: cover;
+    color:white;
 }
 
 
@@ -20,33 +22,33 @@ header {
     padding: 20px;
 }
 
-nav {
+.homepage-div nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-h1 {
+.homepage-div h1 {
     margin: 0;
 }
 
-ul {
+.homepage-div ul {
     list-style: none;
     display: flex;
 }
 
-li {
+.homepage-div li {
     margin-left: 20px;
 }
 
-a {
+.homepage-div a {
     color: #fff;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 4px;
 }
 
-a:hover {
+.homepage-div a:hover {
     background-color: #555;
 }
 
@@ -61,9 +63,12 @@ a:hover {
         color:brown;
         
     }
+    .homepage-div header{
+        margin-bottom: 80px;
+    }
 
     .homepage-div h1 {
         padding-left:15px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 }

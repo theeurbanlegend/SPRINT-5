@@ -2,12 +2,16 @@ import React from 'react'
 import { useGetEmployeesQuery,useUpdateEmployeeMutation } from './employeeApiSlice'
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateEmployee = () => {
 
   const { empId } = useParams(); 
   const [username,setUsername]=React.useState('')
   const [password,setPassword]=React.useState('')
+  const [changepass,setChangepass]=React.useState(false)
+  const [reset,setReset]=React.useState(false)
   const [roles,setRoles]=React.useState([])
   const { data: employee, isLoading, isSuccess } = useGetEmployeesQuery(empId); // Fetch employee details
   const [response,setResponse]=React.useState('')
@@ -35,6 +39,39 @@ const UpdateEmployee = () => {
       setRoles((prevRoles) => prevRoles.filter((role) => role !== roleValue));
     }
   };
+let changePasscode=''
+    if (changepass){
+      changePasscode= (
+       <label htmlFor='password'>Passcode:
+              <br/>
+              <i>Passowrd shown is for keeping privacy intact hence shown in encryption form.
+               SELECT ALL AND ENTER DESIRED PASSWORD ELSE LEAVE IT AS IS
+              </i>
+              
+            <input 
+            type="text"
+            className="update-input"
+            id='username'
+            onChange={e=>setPassword(e.target.value)}
+            value={password}
+            />
+      </label>)
+    }else if(reset){
+      changePasscode=(
+        <label htmlFor='password'>Passcode:
+        <br/>
+        <i>Enter new Password</i>
+      <input 
+      type="text"
+      className="update-input"
+      id='username'
+      onChange={e=>setPassword(e.target.value)}
+      value={password}
+      />
+</label>
+      )
+     
+    }
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
@@ -44,12 +81,14 @@ const UpdateEmployee = () => {
       password:password,
       roles:roles
     }
-    try {
-      await updateEmployee(employee).unwrap();
+    try{
+      const data=await updateEmployee(employee).unwrap();
+      toast.success(data.msg)
       setResponse('Employee updated successfully');
       navigate('/admin');
   } catch (err) {
     console.log(err)
+    toast.error(err.data?.message || 'An error occurred')
       setError(err.data?.message || 'An error occurred');
   }
   }
@@ -69,6 +108,11 @@ const UpdateEmployee = () => {
         />
       </label>
       <br />
+        <a className='toggle' onClick={()=>{setChangepass(true), setReset(false)}}>Change Password?</a>
+        <br/>
+        <a className='toggle' onClick={()=>{setReset(true), setChangepass(false)}}>Reset Password</a>
+      <br />
+      {changePasscode}
       <label>Roles:</label>
           <br />
           <label htmlFor="admin">
